@@ -1,0 +1,380 @@
+U-Boot 2016.03 (Nov 07 2017 - 20:11:55 +0800)
+
+CPU:   Freescale i.MX6ULL rev1.1 528 MHz (running at 396 MHz)
+CPU:   Commercial temperature grade (0C to 95C) at 50C
+Reset cause: POR
+Board: Lumi international Gateway
+I2C:   ready
+DRAM:  256 MiB
+NAND:  256 MiB
+MMC:   FSL_SDHC: 0, FSL_SDHC: 1
+*** Warning - bad CRC, using default environment
+
+Display: TFT43AB (480x272)
+Video: LCDIF@0x21c8000 is fused, disable it
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Ethernet@0x20b4000 is fused, disable it
+Board Net Initialization Failed
+No ethernet found.
+
+## Enter main_loop() Now##
+Normal Boot
+Hit any key to stop autoboot:  0
+
+NAND read: device 0 offset 0x300000, size 0x700000
+ 7340032 bytes read: OK
+
+NAND read: device 0 offset 0xa00000, size 0x100000
+ 1048576 bytes read: OK
+Kernel image @ 0x80800000 [ 0x000000 - 0x617290 ]
+## Flattened Device Tree blob at 83000000
+   Booting using the fdt blob at 0x83000000
+   Using Device Tree in place at 83000000, end 8300c0e1
+
+Modify /soc/aips-bus@02000000/tsc@02040000:status disabled
+Modify /soc/aips-bus@02000000/can@02090000:status disabled
+Modify /soc/aips-bus@02000000/can@02094000:status disabled
+Modify /soc/aips-bus@02100000/lcdif@021c8000:status disabled
+Modify /soc/aips-bus@02100000/pxp@021cc000:status disabled
+Modify /soc/aips-bus@02100000/csi@021c4000:status disabled
+Modify /soc/aips-bus@02000000/ethernet@020b4000:status disabled
+Modify /soc/aips-bus@02100000/usb@02184200:status disabled
+Modify /soc/aips-bus@02000000/spba-bus@02000000/sai@0202c000:status disabled
+Modify /soc/aips-bus@02000000/spba-bus@02000000/sai@02030000:status disabled
+Modify /soc/aips-bus@02100000/serial@021f4000:status disabled
+Modify /soc/aips-bus@02100000/serial@021fc000:status disabled
+Modify /soc/aips-bus@02000000/spba-bus@02000000/serial@02018000:status disabled
+Modify /soc/aips-bus@02000000/pwm@020f0000:status disabled
+Modify /soc/aips-bus@02000000/pwm@020f4000:status disabled
+Modify /soc/aips-bus@02000000/pwm@020f8000:status disabled
+Modify /soc/aips-bus@02000000/pwm@020fc000:status disabled
+Modify /soc/aips-bus@02000000/spba-bus@02000000/ecspi@02010000:status disabled
+Modify /soc/aips-bus@02000000/spba-bus@02000000/ecspi@02014000:status disabled
+Modify /soc/aips-bus@02100000/i2c@021a8000:status disabled
+Modify /soc/aips-bus@02100000/i2c@021f8000:status disabled
+Modify /soc/aips-bus@02000000/gpt@020e8000:status disabled
+Modify /soc/aips-bus@02000000/epit@020d4000:status disabled
+ft_system_setup for mx6
+No PMIC found!
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.1.15+gb63f3f5 (chenlong@gitlab) (gcc version 5.3.0 (GCC) ) #37 SMP PREEMPT Tue Jun 19 15:28:38 CST 2018
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Freescale i.MX6 ULL 14x14 EVK Board
+[    0.000000] Reserved memory: failed to allocate memory for node 'linux,cma'
+[    0.000000] cma: Reserved 96 MiB at 0x8a000000
+[    0.000000] Memory policy: Data cache writealloc
+
+[    0.000000] PERCPU: Embedded 12 pages/cpu @89da3000 s16908 r8192 d24052 u49152
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 65024
+[    0.000000] Kernel command line: console=ttymxc0,115200 ubi.mtd=3 root=ubi0:rootfs rootfstype=ubifs cma=96M mtdparts=gpmi-nand:3m(boot),7m(kernel),1m(dtb),-(rootfs)
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 148920K/262144K available (8035K kernel code, 423K rwdata, 2812K rodata, 540K init, 426K bss, 14920K reserved, 98304K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0x90800000 - 0xff000000   (1768 MB)
+[    0.000000]     lowmem  : 0x80000000 - 0x90000000   ( 256 MB)
+[    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[    0.000000]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+[    0.000000]       .text : 0x80008000 - 0x80aa01f8   (10849 kB)
+[    0.000000]       .init : 0x80aa1000 - 0x80b28000   ( 540 kB)
+[    0.000000]       .data : 0x80b28000 - 0x80b91fa0   ( 424 kB)
+[    0.000000]        .bss : 0x80b94000 - 0x80bfeb5c   ( 427 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000]  Additional per-CPU info printed with stalls.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] mxc_clocksource_init 24000000
+[    0.000000] Switching to timer-based delay loop, resolution 41ns
+[    0.000016] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+[    0.000056] clocksource mxc_timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
+[    0.002573] Console: colour dummy device 80x30
+[    0.002613] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    0.002648] pid_max: default: 32768 minimum: 301
+[    0.002869] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.002899] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.004259] CPU: Testing write buffer coherency: ok
+[    0.004752] /cpus/cpu@0 missing clock-frequency property
+[    0.004795] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.004900] Setting up static identity map for 0x80008280 - 0x800082d8
+[    0.041168] Brought up 1 CPUs
+[    0.041206] SMP: Total of 1 processors activated (48.00 BogoMIPS).
+[    0.041227] CPU: All CPU(s) started in SVC mode.
+[    0.042344] devtmpfs: initialized
+[    0.064060] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.064959] clocksource jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.072798] pinctrl core: initialized pinctrl subsystem
+[    0.075487] NET: Registered protocol family 16
+[    0.093549] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.120896] cpuidle: using governor ladder
+[    0.150954] cpuidle: using governor menu
+[    0.193725] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.193761] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.196947] imx6ul-pinctrl 20e0000.iomuxc: Invalid fsl,pins property in node /soc/aips-bus@02000000/iomuxc@020e0000/imx6ul-evk/hoggrp-1
+[    0.197651] imx6ul-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+[    0.198336] imx6ul-pinctrl 2290000.iomuxc-snvs: initialized IMX pinctrl driver
+[    0.258305] mxs-dma 1804000.dma-apbh: initialized
+[    0.264972] SCSI subsystem initialized
+[    0.266408] usbcore: registered new interface driver usbfs
+[    0.266598] usbcore: registered new interface driver hub
+[    0.266824] usbcore: registered new device driver usb
+[    0.269353] i2c i2c-0: IMX I2C adapter registered
+[    0.269401] i2c i2c-0: can't use DMA
+[    0.270972] i2c i2c-1: IMX I2C adapter registered
+[    0.271015] i2c i2c-1: can't use DMA
+[    0.271321] Linux video capture interface: v2.00
+[    0.271555] pps_core: LinuxPPS API ver. 1 registered
+[    0.271579] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.271862] PTP clock support registered
+[    0.274574] MIPI CSI2 driver module loaded
+[    0.275273] Advanced Linux Sound Architecture Driver Initialized.
+[    0.277433] Bluetooth: Core ver 2.20
+[    0.277562] NET: Registered protocol family 31
+[    0.277585] Bluetooth: HCI device and connection manager initialized
+[    0.277625] Bluetooth: HCI socket layer initialized
+[    0.277657] Bluetooth: L2CAP socket layer initialized
+[    0.277743] Bluetooth: SCO socket layer initialized
+[    0.279879] Switched to clocksource mxc_timer1
+[    0.306689] NET: Registered protocol family 2
+[    0.308327] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.308429] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.308522] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.308663] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.308725] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.309157] NET: Registered protocol family 1
+[    0.312582] imx rpmsg driver is registered.
+[    0.315268] Bus freq driver module loaded
+[    0.317591] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.335730] VFS: Disk quotas dquot_6.6.0
+[    0.336186] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.340522] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.342294] fuse init (API version 7.23)
+[    0.353499] io scheduler noop registered
+[    0.353548] io scheduler deadline registered
+[    0.354083] io scheduler cfq registered (default)
+[    0.355096] imx-weim 21b8000.weim: Driver registered.
+[    0.359596] lumi_r supply power not found, using dummy regulator
+[    0.361773] lumi_b supply power not found, using dummy regulator
+[    0.363534] lumi_g supply power not found, using dummy regulator
+[    0.365819] MIPI DSI driver module loaded
+[    0.366258] MIPI DSI driver module loaded
+[    0.372091] imx-sdma 20ec000.sdma: no event needs to be remapped
+[    0.372305] imx-sdma 20ec000.sdma: loaded firmware 3.3
+[    0.380239] imx-sdma 20ec000.sdma: initialized
+[    0.382310] 2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 19, base_baud = 5000000) is a IMX
+[    1.031573] console [ttymxc0] enabled
+[    1.037104] 21e8000.serial: ttymxc1 at MMIO 0x21e8000 (irq = 217, base_baud = 5000000) is a IMX
+[    1.083033] imx-rng 2284000.rngb: iMX RNG Registered.
+[    1.088755] imx sema4 driver is registered.
+
+[    1.093242] [drm] Initialized drm 1.1.0 20060810
+[    1.099209] [drm] Initialized vivante 1.0.0 20120216 on minor 0
+[    1.132084] brd: module loaded
+[    1.148970] loop: module loaded
+[    1.152948] pn54x_dev_init-->lumi
+[    1.156475] pn54x_probe
+[    1.158997] pn544 1-0028: FIRM GPIO <OPTIONAL> error getting from OF node
+[    1.165988] pn544 1-0028: CLKREQ GPIO <OPTIONAL> error getting from OF node
+[    1.173065] 1-0028 supply nxp,pn54x-pvdd not found, using dummy regulator
+[    1.180089] 1-0028 supply nxp,pn54x-vbat not found, using dummy regulator
+[    1.187040] 1-0028 supply nxp,pn54x-pmuvcc not found, using dummy regulator
+[    1.194196] 1-0028 supply nxp,pn54x-sevdd not found, using dummy regulator
+[    1.201246] pn54x_probe: request irq_gpio 7
+[    1.205471] pn54x_probe: request ven_gpio 3
+[    1.210165] pn54x_probe : requesting IRQ 35
+[    1.229666] nand: device found, Manufacturer ID: 0x2c, Chip ID: 0xda
+[    1.236160] nand: Micron MT29F2G08ABAEAWP
+[    1.240257] nand: 256 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    1.248697] gpmi-nand 1806000.gpmi-nand: enable the asynchronous EDO mode 5
+[    1.256188] Bad block table found at page 131008, version 0x01
+[    1.262329] Bad block table found at page 130944, version 0x01
+[    1.268560] 4 cmdlinepart partitions found on MTD device gpmi-nand
+[    1.274846] Creating 4 MTD partitions on "gpmi-nand":
+[    1.279991] 0x000000000000-0x000000300000 : "boot"
+[    1.287381] 0x000000300000-0x000000a00000 : "kernel"
+[    1.294900] 0x000000a00000-0x000000b00000 : "dtb"
+[    1.302149] 0x000000b00000-0x000010000000 : "rootfs"
+[    1.310584] gpmi-nand 1806000.gpmi-nand: driver registered.
+[    1.322577] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.329181] ehci-mxc: Freescale On-Chip EHCI Host driver
+[    1.335076] usbcore: registered new interface driver usb-storage
+[    1.341371] usbcore: registered new interface driver usb_ehset_test
+[    1.350273] 2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
+[    1.359337] 2184000.usb supply vbus not found, using dummy regulator
+[    1.373941] mousedev: PS/2 mouse device common for all mice
+[    1.381667] input: 20cc000.snvs:snvs-powerkey as /devices/platform/soc/2000000.aips-bus/20cc000.snvs/20cc000.snvs:snvs-powerkey/input/input
+
+[    1.399388] snvs_rtc 20cc000.snvs:snvs-rtc-lp: rtc core: registered 20cc000.snvs:snvs-r as rtc0
+[    1.408603] i2c /dev entries driver
+[    1.415031] IR NEC protocol handler initialized
+[    1.419626] IR RC5(x/sz) protocol handler initialized
+[    1.424820] IR RC6 protocol handler initialized
+[    1.429405] IR JVC protocol handler initialized
+[    1.434027] IR Sony protocol handler initialized
+[    1.438693] IR SANYO protocol handler initialized
+[    1.443486] IR Sharp protocol handler initialized
+[    1.448235] IR MCE Keyboard/mouse protocol handler initialized
+[    1.454151] IR XMP protocol handler initialized
+[    1.464975] imx2-wdt 20bc000.wdog: use WDOG_B to reboot.
+[    1.471363] imx2-wdt 20bc000.wdog: timeout 60 sec (nowayout=0)
+[    1.478626] sdhci: Secure Digital Host Controller Interface driver
+[    1.484965] sdhci: Copyright(c) Pierre Ossman
+[    1.489386] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.496843] /soc/aips-bus@02100000/usdhc@02190000: voltage-ranges unspecified
+[    1.504132] sdhci-esdhc-imx 2190000.usdhc: could not get ultra high speed state, work on normal mode
+[    1.514740] sdhci-esdhc-imx 2190000.usdhc: No vmmc regulator found
+[    1.521039] sdhci-esdhc-imx 2190000.usdhc: No vqmmc regulator found
+[    1.570124] mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
+[    1.604278] usbcore: registered new interface driver usbhid
+[    1.610239] usbhid: USB HID core driver
+[    1.614904] vf610-adc 2198000.adc: Debug vf610_adc_proble()
+[    1.621208] 2198000.adc supply vref not found, using dummy regulator
+[    1.627886] vf610-adc 2198000.adc: Debug[0] channels[2]
+[    1.643544] wm8524_i2c_probe:
+[    1.650032] mmc0: new high speed SDIO card at address 0001
+[    1.656507] wm8960 1-001a: Failed to issue reset
+[    1.661565] wm8960: probe of 1-001a failed with error -5
+[    1.670259] fsl-asrc 2034000.asrc: driver registered
+[    1.683094] imx_wm8524_probe:
+[    1.686786] wm8524_probe:
+[    1.690997] imx-wm8524 sound2: wm8524-hifi <-> 2028000.sai mapping ok
+[    1.698893] imx-wm8524 sound2: snd-soc-dummy-dai <-> 2034000.asrc mapping ok
+[    1.706503] imx-wm8524 sound2: wm8524-hifi <-> 2028000.sai mapping ok
+[    1.720195] NET: Registered protocol family 26
+[    1.726833] NET: Registered protocol family 10
+[    1.733634] sit: IPv6 over IPv4 tunneling driver
+[    1.740333] NET: Registered protocol family 17
+[    1.745149] Bluetooth: RFCOMM TTY layer initialized
+[    1.750298] Bluetooth: RFCOMM socket layer initialized
+[    1.755515] Bluetooth: RFCOMM ver 1.11
+[    1.759334] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    1.764745] Bluetooth: BNEP filters: protocol multicast
+[    1.770073] Bluetooth: BNEP socket layer initialized
+[    1.775083] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    1.781096] Bluetooth: HIDP socket layer initialized
+[    1.786107] 8021q: 802.1Q VLAN Support v1.8
+[    1.790418] lib80211: common routines for IEEE802.11 drivers
+[    1.796312] Key type dns_resolver registered
+[    1.802573] cpu cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)
+[    1.837506] ubi0: attaching mtd3
+[    2.168029] random: nonblocking pool is initialized
+[    2.524734] ubi0: scanning is finished
+[    2.543046] ubi0: attached mtd3 (name "rootfs", size 245 MiB)
+[    2.548851] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.555880] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.562751] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.569746] ubi0: good PEBs: 1956, bad PEBs: 4, corrupted PEBs: 0
+[    2.576265] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.583649] ubi0: max/mean erase counter: 4/0, WL threshold: 4096, image sequence number: 1813099077
+[    2.592851] ubi0: available PEBs: 0, total reserved PEBs: 1956, PEBs reserved for bad PEB handling: 36
+[    2.602233] ubi0: background thread "ubi_bgt0d" started, PID 73
+[    2.608225] dhd_module_init in
+[    2.613077] input: regulators:gpio-keys as /devices/platform/regulators/regulators:gpio-keys/input/input1
+[    2.623405] snvs_rtc 20cc000.snvs:snvs-rtc-lp: setting system clock to 2022-05-24 14:29:37 UTC (1653402577)
+[    2.654222] gpio_dvfs: disabling
+[    2.657501] vref-3v3: disabling
+[    2.660869] can-3v3: disabling
+[    2.664306] ALSA device list:
+[    2.667298]   #0: wm8524-audio
+[    2.705465] UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "rootfs", R/O mode
+[    2.713845] UBIFS (ubi0:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.723831] UBIFS (ubi0:0): FS size: 241635328 bytes (230 MiB, 1903 LEBs), journal size 12062720 bytes (11 MiB, 95 LEBs)
+[    2.734751] UBIFS (ubi0:0): reserved for root: 4952683 bytes (4836 KiB)
+[    2.741420] UBIFS (ubi0:0): media format: w4/r0 (latest is w4/r0), UUID AD7DD6E8-1329-4760-93D9-E1A4D3A2465D, small LPT model
+[    2.754153] VFS: Mounted root (ubifs filesystem) readonly on device 0:14.
+[    2.762333] devtmpfs: mounted
+[    2.766441] Freeing unused kernel memory: 540K (80aa1000 - 80b28000)
+INIT: version 2.88 booting
+Starting udev
+[    3.827455] udevd[105]: starting version 3.1.5
+[    4.353741] UBIFS (ubi0:0): background thread "ubifs_bgt0_0" started, PID 125
+INIT: Entering runlevel: 5
+Configuring network interfaces... eth0: ERROR while getting interface flags: No such device
+Running local boot scripts (/etc/rc.local)[    7.401780] RTL871X: module init start
+[    7.405571] RTL871X: rtl8723bs v4.4.2_17831.20160519_BTCOEX20151223-654a
+[    7.415509] RTL871X: build time: Mar 29 2017 03:05:03
+[    7.420843] RTL871X: rtl8723bs BT-Coex version = BTCOEX20151223-654a
+[    7.436122] RTL871X: rtw_hal_config_rftype RF_Type is 3 TotalTxPath is 1
+[    7.443070] RTL871X: Chip Version Info: CHIP_8723B_Normal_Chip_TSMC_F_CUT_1T1R_RomVer(0)
+[    7.454559] RTL871X: SetHwReg8723B: bMacPwrCtrlOn=1
+[    7.460309] RTL871X: PowerOnCheck: val_mix:0x0000063f, res:0x0000063f
+[    7.466769] RTL871X: PowerOnCheck: 0x100 the result of cmd52 and cmd53 is the same.
+[    7.474694] RTL871X: PowerOnCheck: 0x1B8 test Pass.
+[    7.480291] RTL871X: ReadAdapterInfo8723BS, 0x4e=0xe2
+[    7.485508] RTL871X: EEPROM type is E-FUSE
+[    7.490377] RTL871X: hal_EfuseSwitchToBank: Efuse switch bank to 0
+[    7.571753] RTL871X: hal_ReadEFuse_WiFi: data end at address=0xad
+[    7.577869] RTL871X: Efuse Realmap:
+[    7.581409]
+[    7.582913] 29 81 03 7C 51 08 28 00 62 07 0D 45 10 02 00 00
+[    7.588848] 2C 2C 2B 2B 2B 2B 2E 2E 2D 2D 2D E0 FF FF FF FF
+[    7.594818] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.600786] FF FF FF FF FF FF FF FF FF FF 2D 2D 2D 2D 2D 2D
+[    7.606717] 2D 2D 2D 2D 2D E0 FF FF FF FF FF FF FF FF FF FF
+[    7.612683] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.618613] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.624639] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.630609] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.636542] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.642508] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.648440] FF FF FF FF FF FF FF FF 20 1F 20 00 00 00 FF FF
+[    7.654445] FF 29 20 11 00 00 00 FF 00 FF 12 FF FF FF FF FF
+[    7.660417] 3E 10 01 02 23 00 00 FF 20 04 4C 02 23 B7 21 02
+[    7.666349] 0C 00 22 04 00 08 00 32 FF 21 02 0C 00 22 2A 01
+[    7.672311] 01 00 00 00 00 00 00 00 00 00 00 00 02 00 FF FF
+[    7.678240] 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[    7.684197] 00 EB 00 6E 01 00 00 00 00 FF 38 83 9A 43 D1 2B
+[    7.690156] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.696089] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.702049] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.707980] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.713939] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.719898] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.725833] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.731792] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.737722] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.743723] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.749657] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.755631] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.761594] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.767529] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+[    7.781517] RTL871X: Hal_EfuseParseBTCoexistInfo_8723B: Enable BT-coex, ant_num=1
+[    7.789028] RTL871X: hal_com_config_channel_plan chplan:0x20
+[    7.795572] RTL871X: Hal_EfuseParsePackageType_8723B phy efuse read 0x1FB =fc
+[    7.802984] RTL871X: PackageType = 0x4
+[    7.806751] RTL871X: Hal_EfuseParseVoltage_8723B hwinfo[EEPROM_Voltage_ADDR_8723B] =62
+[    7.814806] RTL871X: Hal_EfuseParseVoltage_8723B pHalData->adjuseVoltageVal =6
+[    7.822154] RTL871X: AutoloadFail =0,
+[    7.826137] RTL871X: pHalData->EEPROMRFGainVal=0
+[    7.830896] RTL871X: EEPRORFGainOffset = 0x29
+[    7.836428] RTL871X: SetHwReg8723B: bMacPwrCtrlOn=0
+[    7.842378] RTL871X: rtw_hal_read_chip_info in 390 ms
+[    7.847684] RTL871X: init_channel_set((null)) ChannelPlan ID:0x20, ch num:13
+[    7.855814] RTL871X: rtw_alloc_macid((null)) if1, hwaddr:ff:ff:ff:ff:ff:ff macid:1
+[    7.863543] RTL871X: Init_ODM_ComInfo_8723b(): fab_ver=0 cut_ver=0
+[    7.869758] RTL871X: rtw_macaddr_cfg mac addr:38:83:9a:43:d1:2b
+[    7.876024] RTL871X: bDriverStopped:True, bSurpriseRemoved:False, bup:0, hw_init_completed:0
+[    7.884606] RTL871X: rtw_wiphy_alloc(phy0)
+[    7.888721] RTL871X: rtw_wdev_alloc(padapter=90d39000)
+[    7.893934] RTL871X: rtw_wiphy_register(phy0)
+[    7.898306] RTL871X: Register RTW cfg80211 vendor cmd(0x67) interface
+[    7.908282] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=38:83:9a:43:d1:2b
+[    7.941750] RTL871X: module init ret=0
+====================================
+========== start mi=================
+====================================
+.
+umount: /mnt/.psplash: not mounted
+INIT: no more processes left in this runlevel
+
+
